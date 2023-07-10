@@ -21,7 +21,7 @@
       echo "<a href='delete_post.php?id=" . $row['id'] . "'>삭제</a><br><br>";
     }
   } else {
-    echo "게시글이 없습니다.";
+    echo "게시글이 없습니다.<br>";
   }
 
   // 게시글 작성 링크
