@@ -1,0 +1,1 @@
+# php, Apache, MySQL을 이용한 게시판 구현
