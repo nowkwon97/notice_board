@@ -16,7 +16,7 @@
     while ($row = mysqli_fetch_assoc($result)) {
       echo "제목: " . $row['title'] . "<br>";
       echo "작성일: " . $row['created_at'] . "<br>";
-      echo "<a href='view_post.php?id=" . $row['id'] . "'>자세히 보기</a>";
+      echo "<a href='view_post.php?id=" . $row['id'] . "'>상세보기 </a>";
       echo "<a href='edit_post.php?id=" . $row['id'] . "'>수정</a> ";
       echo "<a href='delete_post.php?id=" . $row['id'] . "'>삭제</a><br><br>";
     }
