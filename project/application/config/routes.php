@@ -53,5 +53,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Posts';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-//* localhost/index.php/posts에 대한 요청이 Posts컨트롤러의 index()메서드로 라우팅
-$route['posts'] = 'Posts';
+
