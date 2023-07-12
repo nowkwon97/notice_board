@@ -2,7 +2,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<!-- 컨트롤러에서 전달받은 배열의 키를 변수명으로 사용하여 해당 값을 접근할 수 있다. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     // echo "내용: " . $posts[0]['content'] . "<br>";
   ?>
 
-
+  <!-- 컨트롤러에서 전달받은 배열의 키를 변수명으로 사용하여 해당 값을 접근할 수 있다. -->  
   <!-- posts 배열의 모든 요소를 순회하며 반복 -->
   <!-- 제어문의 대체 문법 콜론(:)을 통해 HTML 태그 요소를 사용 -->
   <?php foreach($posts as $post) : ?>
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <a href="view">상세보기</a>
     <a href="edit">수정</a>
     <a href="delete">삭제</a><br><br>
-  <?php endforeach?>
+  <?php endforeach; ?>
   <a href="create">게시글 작성</a>
 </body>
 </html>

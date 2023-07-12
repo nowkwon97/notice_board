@@ -10,6 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>view page</title>
 </head>
 <body>
-  <h2>게시글 수정</h2>
+  <h2>게시글 작성</h2>
 </body>
 </html>

@@ -9,6 +9,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>view page</title>
 </head>
 <body>
-  <h2>게시물 상세</h2>
+  <h2>게시물 상세보기</h2>
 </body>
 </html>
