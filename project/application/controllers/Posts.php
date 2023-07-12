@@ -38,6 +38,7 @@
 
     public function create() {
       // 게시글 작성 기능 구현
+      $this->load->view('posts/create');
     }
 
     public function edit($id) {

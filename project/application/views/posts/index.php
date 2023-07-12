@@ -35,6 +35,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php echo "내용: " . $post['content'] . "<br>"; ?>
     </p>
   <?php endforeach?>
-
+  <a href="create">게시글 작성</a>
 </body>
 </html>
