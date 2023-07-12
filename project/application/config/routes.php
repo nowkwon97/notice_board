@@ -49,7 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+//! 디폴트 컨트롤러를 Posts로 변경해주어야 한다.
+$route['default_controller'] = 'Posts';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['posts'] = 'posts/index'; // Posts 컨트롤러의 index 메서드 호출하도록 설정
+//* localhost/index.php/posts에 대한 요청이 Posts컨트롤러의 index()메서드로 라우팅
+$route['posts'] = 'Posts';
