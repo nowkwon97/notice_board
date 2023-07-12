@@ -26,7 +26,7 @@
         }
       }
       // 디버깅
-      print_r($data['posts'][0]);
+      // print_r($data['posts'][0]);
 
       $this->load->view('posts/index', $data);
     }

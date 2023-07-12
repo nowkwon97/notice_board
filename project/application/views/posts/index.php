@@ -13,9 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <h2>게시글 목록</h2>
   
   <?php
-    print_r($posts[0]);
-    echo "<br>";
-    echo "<br>";
+    // print_r($posts[0]);
+    // echo "<br>";
+    // echo "<br>";
     // echo "제목: " . $posts[0]['title'] . "<br>";
     // echo "작성일: " . $posts[0]['created_at'] . "<br>";
     // echo "내용: " . $posts[0]['content'] . "<br>";
@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
   <!-- posts 배열의 모든 요소를 순회하며 반복 -->
+  <!-- 제어문의 대체 문법 콜론(:)을 통해 HTML 태그 요소를 사용 -->
   <?php foreach($posts as $post) : ?>
     <h3>
       <?php echo "제목: " . $post['title'] . "<br>"; ?>
