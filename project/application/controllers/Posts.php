@@ -31,7 +31,7 @@
       $this->load->view('posts/index', $data);
     }
 
-    public function view($id) {
+    public function view() {
       // 게시글 상세 조회 기능 구현
       $this->load->view('posts/view');
     }
@@ -41,12 +41,14 @@
       $this->load->view('posts/create');
     }
 
-    public function edit($id) {
+    public function edit() {
       // 게시글 수정 기능 구현
+      $this->load->view('posts/edit');
     }
 
-    public function delete($id) {
+    public function delete() {
       // 게시글 삭제 기능 구현
+      $this->load->view('posts/delete');
     }
   }
 ?>

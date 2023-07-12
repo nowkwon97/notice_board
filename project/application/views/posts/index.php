@@ -31,9 +31,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <p>
       <?php echo "작성일: " . $post['created_at'] . "<br>"; ?>
     </p>
-    <p>
-      <?php echo "내용: " . $post['content'] . "<br>"; ?>
-    </p>
+    <a href="view">상세보기</a>
+    <a href="edit">수정</a>
+    <a href="delete">삭제</a><br><br>
   <?php endforeach?>
   <a href="create">게시글 작성</a>
 </body>
