@@ -10,5 +10,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
   <h2>게시물 상세보기</h2>
+  <?php
+    print_r($posts);
+  ?>
 </body>
 </html>

@@ -35,10 +35,19 @@
       $this->load->view('posts/index', $data);
     }
 
-    public function view() {
+    //! view부분 작업 중. $id를 파라미터로 사용하여 쿼리를 실행하는 로직에서 오류가 발생하는 것으로 보임
+    public function view($id) {
       // 게시글 상세 조회 기능 구현
-      
-      $this->load->view('posts/view');
+
+      // DB 연결
+      $this->load->database();
+
+      // SELECT * FROM posts WHERE 'id' = '$id'
+      $query = $this->db->get_where('posts', array('id' => $id));
+
+      $data['posts'] = $query->row_array();
+
+      $this->load->view('posts/view', $data);
     }
 
     public function create() {
