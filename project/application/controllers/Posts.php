@@ -9,16 +9,16 @@
       //? APPPATH는 CI 프레임워크에서 애플리케이션 디렉토리의 경로를 나타내는 상수이다.
       //? APPPATH 상수는 application 디렉토리의 절대 경로를 가리킨다.
       //? APPPATH 를 사용하여 애플리케이션 디렉토리 내의 파일 및 디렉토리 접근 가능
-      require(APPPATH . 'config/database.php');
+      // require(APPPATH . 'config/database.php');
       // DB연결
       // $conn = mysqli_connect($db['default']['hostname'], $db['default']['username'], $db['default']['password'], $db['default']['database']);
-      $this->load->database();
+      // $this->load->database();
 
       // 게시글 목록 조회 쿼리 실행
       // $sql = "SELECT * FROM posts ORDER BY created_at DESC";
       // $result = mysqli_query($conn, $sql);
-      $query = $this->db->query("SELECT * FROM posts ORDER BY created_at DESC");
-      $data['posts'] = $query->result_array();
+      // $query = $this->db->query("SELECT * FROM posts ORDER BY created_at DESC");
+      // $data['posts'] = $query->result_array();
 
       // view로 보내기 위한 빈 배열 생성
       // $data['posts'] = array();
@@ -32,10 +32,14 @@
       // 디버깅
       // print_r($data['posts']);
 
+      //* Post_model 불러오기
+      $this->load->model('Post_model');
+      //* Post_model에서 getPosts() 함수를 불러와 반환된 값을 $data['posts']에 저장
+      $data['posts'] = $this->Post_model->getPosts();
+
       $this->load->view('posts/index', $data);
     }
 
-    //! view부분 작업 중. $id를 파라미터로 사용하여 쿼리를 실행하는 로직에서 오류가 발생하는 것으로 보임
     public function view($id) {
       // 게시글 상세 조회 기능 구현
 
@@ -56,6 +60,7 @@
 
       $this->load->helper('form');
       $this->load->helper('url');
+      $this->load->helper('date');
       $this->load->library('form_validation');
       $this->load->database();
       
@@ -72,11 +77,13 @@
         $data = array(
           'title' => $this->input->post('title'),
           'content' => $this->input->post('content'),
-          'created_at' => date('Y-m-d H:i:s')
+          //! 시간이 현재 시간으로 나오지 않고있음(날짜는 잘 나옴)
+          'created_at' => date('Y-m-d H:i:s', time())
         );
         // DB에 데이터 삽입
         $this->db->insert('posts', $data);
         // 작성 후 다시 리디렉션
+        // 리디렉션을 쓰기위해선 url helper를 불러와야한다.
         redirect('posts');
       }
       
