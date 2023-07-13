@@ -19,7 +19,10 @@
     }
 
     public function createPost($data) {
-
+      // DB 연결
+      $this->load->database();
+      // $data를 posts테이블에 삽입
+      $this->db->insert('posts', $data);
     }
 
     public function editPost() {

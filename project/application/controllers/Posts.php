@@ -66,7 +66,7 @@
       $this->load->helper('url');
       $this->load->helper('date');
       $this->load->library('form_validation');
-      $this->load->database();
+      // $this->load->database();
       
       // 폼 유효성 검사
       $this->form_validation->set_rules('title', '제목', 'required');
@@ -78,6 +78,7 @@
         return;
       } else {
         // 유효성 검사 통과 시, 데이터 저장
+        $this->load->model('Post_model');
         $data = array(
           'title' => $this->input->post('title'),
           'content' => $this->input->post('content'),
@@ -85,7 +86,8 @@
           'created_at' => date('Y-m-d H:i:s', time())
         );
         // DB에 데이터 삽입
-        $this->db->insert('posts', $data);
+        // $this->db->insert('posts', $data);
+        $this->Post_model->createPost($data);
         // 작성 후 다시 리디렉션
         // 리디렉션을 쓰기위해선 url helper를 불러와야한다.
         redirect('posts');
