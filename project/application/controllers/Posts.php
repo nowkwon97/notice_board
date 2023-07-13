@@ -99,7 +99,7 @@
     }
     //! edit 부분에서 오류 발생 중.
     //! $id인수를 받아오지 못하는 오류로 보임..왜..?
-    //! 게시물 수정 누를 시 url에서 id값이 사라져서 해당 오류가 나타나는 것 확인.
+    //! 게시물 수정 누를 시 url에서 id값이 사라져서 해당 오류가 나타나는 것 확인. -> edit.php의 form_open이 원인이었다. 
     public function edit($id) {
       // 게시글 수정 기능 구현
       $this->load->library('form_validation');
