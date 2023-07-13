@@ -44,13 +44,17 @@
       // 게시글 상세 조회 기능 구현
 
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
 
       // SELECT * FROM posts WHERE 'id' = '$id'
-      $query = $this->db->get_where('posts', array('id' => $id));
+      // $query = $this->db->get_where('posts', array('id' => $id));
 
-      $data['posts'] = $query->row_array();
+      // $data['posts'] = $query->row_array();
       // print_r($data['posts']);
+      //* Post_model 불러오기
+      $this->load->model('Post_model');
+      //* Post_model에서 viewPost($id) 함수를 불러와 반환된 값을 $data['post']에 저장
+      $data['posts'] = $this->Post_model->viewPost($id);
 
       $this->load->view('posts/view', $data);
     }
