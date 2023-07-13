@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>view page</title>
+	<title>게시물 상세보기</title>
 </head>
 <body>
   <h2>게시물 상세보기</h2>

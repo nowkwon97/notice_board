@@ -53,11 +53,46 @@
 
     public function create() {
       // 게시글 작성 기능 구현
+
+      $this->load->helper('form');
+      $this->load->helper('url');
+      $this->load->library('form_validation');
+      $this->load->database();
+      
+      // 폼 유효성 검사
+      $this->form_validation->set_rules('title', '제목', 'required');
+      $this->form_validation->set_rules('content', '내용', 'required');
+      
+      if ($this->form_validation->run() === FALSE){
+        // 유효성 검사 실패 시, 다시 작성 폼 표시
+        $this->load->view('posts/create');
+        return;
+      } else {
+        // 유효성 검사 통과 시, 데이터 저장
+        $data = array(
+          'title' => $this->input->post('title'),
+          'content' => $this->input->post('content'),
+          'created_at' => date('Y-m-d H:i:s')
+        );
+        // DB에 데이터 삽입
+        $this->db->insert('posts', $data);
+        // 작성 후 다시 리디렉션
+        redirect('posts');
+      }
+      
       $this->load->view('posts/create');
     }
 
     public function edit($id) {
       // 게시글 수정 기능 구현
+      echo $id;
+
+      // DB 연결
+      $this->db->database();
+
+      // 게시글 수정 쿼리
+      $query = $this->db->
+
       $this->load->view('posts/edit');
     }
 

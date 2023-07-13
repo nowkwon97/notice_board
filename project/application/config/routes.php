@@ -55,3 +55,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 //* URL 이 posts/view를 포함하고 뒤에 숫자가 나오면 Posts/view함수로 연결되어 변수로써 전달
 $route['posts/view/(:num)'] = 'Posts/view/$1';
+$route['posts/edit(:num)'] = 'Posts/edit/$1';
