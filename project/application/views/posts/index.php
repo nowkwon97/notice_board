@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <h2>게시글 목록</h2>
   
   <?php
-    // print_r($posts[0]);
+    // print_r($posts);
     // echo "<br>";
     // echo "<br>";
     // echo "제목: " . $posts[0]['title'] . "<br>";
@@ -31,10 +31,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <p>
       <?php echo "작성일: " . $post['created_at'] . "<br>"; ?>
     </p>
-    <a href="view">상세보기</a>
-    <a href="edit">수정</a>
-    <a href="delete">삭제</a><br><br>
+    <!-- url에 id를 표시하여 글의 식별이 가능하게 해야한다. -->
+    <a href="posts/view/<?php echo $post['id']; ?>">상세보기</a>
+    <a href="posts/edit/<?php echo $post['id']; ?>">수정</a>
+    <a href="posts/delete/<?php echo $post['id']; ?>">삭제</a><br><br>
   <?php endforeach; ?>
-  <a href="create">게시글 작성</a>
+  <a href="posts/create">게시글 작성</a>
 </body>
 </html>

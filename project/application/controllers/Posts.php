@@ -30,7 +30,7 @@
       //   }
       // }
       // 디버깅
-      // print_r($data['posts'][0]);
+      // print_r($data['posts']);
 
       $this->load->view('posts/index', $data);
     }
@@ -46,6 +46,7 @@
       $query = $this->db->get_where('posts', array('id' => $id));
 
       $data['posts'] = $query->row_array();
+      // print_r($data['posts']);
 
       $this->load->view('posts/view', $data);
     }
@@ -55,12 +56,12 @@
       $this->load->view('posts/create');
     }
 
-    public function edit() {
+    public function edit($id) {
       // 게시글 수정 기능 구현
       $this->load->view('posts/edit');
     }
 
-    public function delete() {
+    public function delete($id) {
       // 게시글 삭제 기능 구현
       $this->load->view('posts/delete');
     }
