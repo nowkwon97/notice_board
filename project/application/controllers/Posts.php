@@ -147,6 +147,12 @@
 
     public function delete($id) {
       // 게시글 삭제 기능 구현
+      $this->load->helper('url');
+      
+      $this->load->database();
+      
+      $this->db->delete('posts', array('id'=>$id));
+
       $this->load->view('posts/delete');
     }
   }
