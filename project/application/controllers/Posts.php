@@ -124,10 +124,10 @@
       
       // 게시글 조회 쿼리
       // $query = $this->db->query("SELECT * FROM posts WHERE id = $id");
-      //! 리팩토링
+      
       // $this->load->model('Post_model');
       $data['posts'] = $this->Post_model->getPostForEditPost($id);
-      //!
+      
       // $data['posts'] = $query->result_array();
       // print_r($data['posts'][0]['content']);
       //* 현재의 title, content를 edit.php으로 보내기 위해 변수 선언 및 할당
@@ -146,10 +146,10 @@
           'content' => $this->input->post('content'),
         );
         // 해당 ID에 해당하는 게시물을 수정
-        //! 리팩토링
+        
         // $this->load->model('Post_model');
         $this->Post_model->editPost($id, $postData);
-        //!
+        
         // $this->db->where('id', $id);
         // $this->db->update('posts', $postData);
 
@@ -169,10 +169,10 @@
       
       // $this->db->delete('posts', array('id'=>$id));
 
-      //! 리팩토링
+      
       // $this->load->model('Post_model');
       $this->Post_model->deletePost($id);
-      //!
+      
       $this->load->view('posts/delete');
     }
   }
