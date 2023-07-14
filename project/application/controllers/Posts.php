@@ -109,14 +109,18 @@
       // echo "<br>";
 
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
 
       //? 요청 시의 title, content를 변수에 담아 수정 쿼리에 넣어주는 작업 필요.
       //? 기존에 작성되어 있던 title, content를 view에 전달하는 로직 필요. view로 전달해주는 변수를 하나 더 만들어야 하나? -> 배열을 이용해 해결
       
       // 게시글 조회 쿼리
-      $query = $this->db->query("SELECT * FROM posts WHERE id = $id");
-      $data['posts'] = $query->result_array();
+      // $query = $this->db->query("SELECT * FROM posts WHERE id = $id");
+      //! 리팩토링
+      $this->load->model('Post_model');
+      $data['posts'] = $this->Post_model->getPostForEditPost($id);
+      //!
+      // $data['posts'] = $query->result_array();
       // print_r($data['posts'][0]['content']);
       //* 현재의 title, content를 edit.php으로 보내기 위해 변수 선언 및 할당
       $title = $data['posts'][0]['title'];
@@ -134,8 +138,12 @@
           'content' => $this->input->post('content'),
         );
         // 해당 ID에 해당하는 게시물을 수정
-        $this->db->where('id', $id);
-        $this->db->update('posts', $postData);
+        //! 리팩토링
+        $this->load->model('Post_model');
+        $this->Post_model->editPost($id, $postData);
+        //!
+        // $this->db->where('id', $id);
+        // $this->db->update('posts', $postData);
 
         redirect('posts');
       }

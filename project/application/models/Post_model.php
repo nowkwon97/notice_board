@@ -24,9 +24,20 @@
       // $data를 posts테이블에 삽입
       $this->db->insert('posts', $data);
     }
+    
+    public function getPostForEditPost($id) {
+      // DB 연결
+      $this->load->database();
+      $query = $this->db->query("SELECT * FROM posts WHERE id = $id");
 
-    public function editPost() {
+      return $query->result_array();
+    }
 
+    public function editPost($id, $postData) {
+      $this->load->database();
+
+      $this->db->where('id', $id);
+      $this->db->update('posts', $postData);
     }
 
     public function deletePost() {
