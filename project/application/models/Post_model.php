@@ -6,7 +6,7 @@
     }
     public function getPosts() {
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
       // 조회 쿼리 실행 및 변수에 담기
       $query = $this->db->query("SELECT * FROM posts ORDER BY created_at DESC");
       // 쿼리 결과를 배열로 담아 반환
@@ -15,7 +15,7 @@
 
     public function viewPost($id) {
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
       // posts테이블에서 id값이 $id 인 값을 조회
       $query = $this->db->get_where('posts', array('id' => $id));
       // 쿼리 결과를 배열로 담아 반환
@@ -24,14 +24,14 @@
 
     public function createPost($data) {
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
       // $data를 posts테이블에 삽입
       $this->db->insert('posts', $data);
     }
     
     public function getPostForEditPost($id) {
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
       // 조회 쿼리 실행 및 변수에 담기
       $query = $this->db->query("SELECT * FROM posts WHERE id = $id");
       // 쿼리 결과를 배열로 담아 반환
@@ -40,7 +40,7 @@
 
     public function editPost($id, $postData) {
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
       // Where 'id' = $id
       $this->db->where('id', $id);
       // posts테이블을 $postData의 내용으로 수정
@@ -49,7 +49,7 @@
 
     public function deletePost($id) {
       // DB 연결
-      $this->load->database();
+      // $this->load->database();
       // posts테이블에서 id=$id인 데이터 삭제
       $this->db->delete('posts', array('id'=>$id));
     }

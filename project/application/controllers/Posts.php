@@ -43,7 +43,7 @@
       // print_r($data['posts']);
 
       //* Post_model 불러오기
-      $this->load->model('Post_model');
+      // $this->load->model('Post_model');
       //* Post_model에서 getPosts() 함수를 불러와 반환된 값을 $data['posts']에 저장
       $data['posts'] = $this->Post_model->getPosts();
 
@@ -62,7 +62,7 @@
       // $data['posts'] = $query->row_array();
       // print_r($data['posts']);
       //* Post_model 불러오기
-      $this->load->model('Post_model');
+      // $this->load->model('Post_model');
       //* Post_model에서 viewPost($id) 함수를 불러와 반환된 값을 $data['post']에 저장
       $data['posts'] = $this->Post_model->viewPost($id);
 
@@ -72,10 +72,10 @@
     public function create() {
       // 게시글 작성 기능 구현
 
-      $this->load->helper('form');
-      $this->load->helper('url');
-      $this->load->helper('date');
-      $this->load->library('form_validation');
+      // $this->load->helper('form');
+      // $this->load->helper('url');
+      // $this->load->helper('date');
+      // $this->load->library('form_validation');
       // $this->load->database();
       
       // 폼 유효성 검사
@@ -88,7 +88,7 @@
         return;
       } else {
         // 유효성 검사 통과 시, 데이터 저장
-        $this->load->model('Post_model');
+        // $this->load->model('Post_model');
         $data = array(
           'title' => $this->input->post('title'),
           'content' => $this->input->post('content'),
@@ -110,8 +110,8 @@
     //! 게시물 수정 누를 시 url에서 id값이 사라져서 해당 오류가 나타나는 것 확인. -> edit.php의 form_open이 원인이었다. 
     public function edit($id) {
       // 게시글 수정 기능 구현
-      $this->load->library('form_validation');
-      $this->load->helper('url');
+      // $this->load->library('form_validation');
+      // $this->load->helper('url');
 
       // echo $id;
       // echo "<br>";
@@ -125,7 +125,7 @@
       // 게시글 조회 쿼리
       // $query = $this->db->query("SELECT * FROM posts WHERE id = $id");
       //! 리팩토링
-      $this->load->model('Post_model');
+      // $this->load->model('Post_model');
       $data['posts'] = $this->Post_model->getPostForEditPost($id);
       //!
       // $data['posts'] = $query->result_array();
@@ -147,7 +147,7 @@
         );
         // 해당 ID에 해당하는 게시물을 수정
         //! 리팩토링
-        $this->load->model('Post_model');
+        // $this->load->model('Post_model');
         $this->Post_model->editPost($id, $postData);
         //!
         // $this->db->where('id', $id);
@@ -163,14 +163,14 @@
 
     public function delete($id) {
       // 게시글 삭제 기능 구현
-      $this->load->helper('url');
+      // $this->load->helper('url');
       
       // $this->load->database();
       
       // $this->db->delete('posts', array('id'=>$id));
 
       //! 리팩토링
-      $this->load->model('Post_model');
+      // $this->load->model('Post_model');
       $this->Post_model->deletePost($id);
       //!
       $this->load->view('posts/delete');
