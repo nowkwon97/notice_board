@@ -51,7 +51,7 @@
     }
 
     public function view($id) {
-      // 게시글 상세 조회 기능 구현
+      //* 게시글 상세 조회 기능 구현
 
       // DB 연결
       // $this->load->database();
@@ -70,7 +70,7 @@
     }
 
     public function create() {
-      // 게시글 작성 기능 구현
+      //* 게시글 작성 기능 구현
 
       // $this->load->helper('form');
       // $this->load->helper('url');
@@ -109,7 +109,7 @@
     //! $id인수를 받아오지 못하는 오류로 보임..왜..?
     //! 게시물 수정 누를 시 url에서 id값이 사라져서 해당 오류가 나타나는 것 확인. -> edit.php의 form_open이 원인이었다. 
     public function edit($id) {
-      // 게시글 수정 기능 구현
+      //* 게시글 수정 기능 구현
       // $this->load->library('form_validation');
       // $this->load->helper('url');
 
@@ -162,7 +162,7 @@
     }
 
     public function delete($id) {
-      // 게시글 삭제 기능 구현
+      //* 게시글 삭제 기능 구현
       // $this->load->helper('url');
       
       // $this->load->database();
