@@ -1,6 +1,14 @@
 <?php
 //! 컨트롤러 파일 이름과 해당 클래스의 이름이 정확히 일치해야 한다.
   class Posts extends CI_Controller {
+    public function __construct() {
+      parent::__construct();
+      $this->load->model('Post_model');
+      $this->load->helper('form');
+      $this->load->helper('url');
+      $this->load->helper('date');
+      $this->load->library('form_validation');
+    }
     public function index() {
       //* 게시글 목록 조회 기능 구현
 
