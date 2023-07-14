@@ -157,11 +157,15 @@
       // 게시글 삭제 기능 구현
       $this->load->helper('url');
       
-      $this->load->database();
+      // $this->load->database();
       
-      $this->db->delete('posts', array('id'=>$id));
+      // $this->db->delete('posts', array('id'=>$id));
 
-      $this->load->view('posts/delete');
+      // $this->load->view('posts/delete');
+      //! 리팩토링
+      $this->load->model('Post_model');
+      $this->Post_model->deletePost($id);
+      //!
     }
   }
 ?>

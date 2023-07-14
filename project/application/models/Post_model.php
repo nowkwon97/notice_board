@@ -34,14 +34,20 @@
     }
 
     public function editPost($id, $postData) {
+      // DB 연결
       $this->load->database();
 
       $this->db->where('id', $id);
       $this->db->update('posts', $postData);
     }
 
-    public function deletePost() {
+    public function deletePost($id) {
+      // DB 연결
+      $this->load->database();
+      
+      $this->db->delete('posts', array('id'=>$id));
 
+      $this->load->view('posts/delete');
     }
   }
 ?>
