@@ -28,26 +28,26 @@
     public function getPostForEditPost($id) {
       // DB 연결
       $this->load->database();
+      // 조회 쿼리 실행 및 변수에 담기
       $query = $this->db->query("SELECT * FROM posts WHERE id = $id");
-
+      // 쿼리 결과를 배열로 담아 반환
       return $query->result_array();
     }
 
     public function editPost($id, $postData) {
       // DB 연결
       $this->load->database();
-
+      // Where 'id' = $id
       $this->db->where('id', $id);
+      // posts테이블을 $postData의 내용으로 수정
       $this->db->update('posts', $postData);
     }
 
     public function deletePost($id) {
       // DB 연결
       $this->load->database();
-      
+      // posts테이블에서 id=$id인 데이터 삭제
       $this->db->delete('posts', array('id'=>$id));
-
-      $this->load->view('posts/delete');
     }
   }
 ?>

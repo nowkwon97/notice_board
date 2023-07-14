@@ -161,11 +161,11 @@
       
       // $this->db->delete('posts', array('id'=>$id));
 
-      // $this->load->view('posts/delete');
       //! 리팩토링
       $this->load->model('Post_model');
       $this->Post_model->deletePost($id);
       //!
+      $this->load->view('posts/delete');
     }
   }
 ?>
