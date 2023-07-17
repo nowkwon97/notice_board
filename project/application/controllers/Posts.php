@@ -10,6 +10,12 @@
       $this->load->library('form_validation');
     }
     public function index() {
+      /**
+       * todo 로그인 상태 확인하는 로직 필요
+       * todo 로그인 실패 시 로그인 화면으로 리디렉션
+       */
+
+
       //* 게시글 목록 조회 기능 구현
       /**
        * ? 1. 모델에서 getPost() 호출하여 반환된 값을 $data['posts']에 저장
