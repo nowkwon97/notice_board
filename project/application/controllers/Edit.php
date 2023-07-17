@@ -2,14 +2,14 @@
   class Edit extends CI_Controller {
     public function __construct() {
       parent::__construct();
-      $this->load->model('Post_model');
+      $this->load->model('Edit_model');
       $this->load->library('form_validation');
       $this->load->helper('url');
     }
 
     public function index($id) {
       //* 게시글 수정 기능 구현
-      $data['posts'] = $this->Post_model->getPostForEditPost($id);
+      $data['posts'] = $this->Edit_model->getPostForEditPost($id);
       //* 현재의 title, content를 eidt.php로 보내기 위해 변수 선언 및 할당
       $title = $data['posts'][0]['title'];
       $content = $data['posts'][0]['content'];
@@ -27,8 +27,8 @@
           'title' => $this->input->post('title'),
           'content' => $this->input->post('content'),
         );
-        // Post_model에서 editPost()를 호출
-        $this->Post_model->editPost($id, $postData);
+        // Edit_model에서 editPost()를 호출
+        $this->Edit_model->editPost($id, $postData);
         // 수정 후 다시 리디렉션
         redirect('posts');
       }

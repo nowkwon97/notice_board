@@ -2,7 +2,7 @@
   class Create extends CI_Controller {
     public function __construct() {
       parent::__construct();
-      $this->load->model('Post_model');
+      $this->load->model('Create_model');
       $this->load->helper('form');
       $this->load->helper('url');
       $this->load->library('form_validation');
@@ -28,8 +28,8 @@
           'content' => $this->input->post('content'),
           'created_at' => date('Y-m-d H:i:s', time())
         );
-        // Post_model 에서 createPost()함수 호출
-        $this->Post_model->createPost($data);
+        // Create_model 에서 createPost()함수 호출
+        $this->Create_model->createPost($data);
         // 작성 후 다시 리디렉션
         redirect('posts');
       }
