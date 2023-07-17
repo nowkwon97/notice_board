@@ -26,16 +26,19 @@
 
       if ($this->form_validation->run()===FALSE) {
         // 폼 유효성 검사 실패 시
+        echo "폼 유효성 검사 실패 시";
         //! 현재 유효성 검사 실패가 뜨고있음..
         $this->load->view('userMgmt/login');
       } else {
         // 폼 유효성 검사 성공 시
+        echo "폼 유효성 검사 성공 시";
         // DB에서 정보 확인 후 일치 시 게시판으로
         // 불 일치 시 로그인으로 리디렉션
         $user = $this->Login_model->getUserByUsername($username);
 
         if ($user && password_verify($password, $user['password'])) {
           // form의 input 데이터가 DB의 데이터와 일치할 시
+          echo "폼 유효성 검사 성공 및 form의 input이 DB와 일치할 시";
           // 세션 발급 및 게시판으로 리디렉션
           $userData = array(
             'username' => $user['username'],
@@ -46,6 +49,7 @@
           redirect('posts');
         } else {
           // form의 데이터가 DB의 데이터와 일치하지 않을 시
+          echo "폼 유효성 검사 성공이지만 form의 input이 DB와 일치하지 않을 시";
           redirect('login');
         }
       }
