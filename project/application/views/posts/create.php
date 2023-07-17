@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
   <h2>게시글 작성</h2>
 	<?php echo validation_errors(); ?>
-	<?php echo form_open('posts/create') ?>
+	<?php echo form_open('create/index') ?>
 		<div>
       <label for="title">제목</label>
       <input type="input" name="title" required>

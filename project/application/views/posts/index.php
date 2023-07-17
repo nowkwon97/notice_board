@@ -32,10 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php echo "작성일: " . $post['created_at'] . "<br>"; ?>
     </p>
     <!-- url에 id를 표시하여 글의 식별이 가능하게 해야한다. -->
-    <a href="posts/view/<?php echo $post['id']; ?>">상세보기</a>
-    <a href="posts/edit/<?php echo $post['id']; ?>">수정</a>
-    <a href="posts/delete/<?php echo $post['id']; ?>">삭제</a><br><br>
+    <a href="view/index/<?php echo $post['id']; ?>">상세보기</a>
+    <a href="edit/index/<?php echo $post['id']; ?>">수정</a>
+    <a href="delete/index/<?php echo $post['id']; ?>">삭제</a><br><br>
   <?php endforeach; ?>
-  <a href="posts/create">게시글 작성</a>
+  <a href="create/index">게시글 작성</a>
 </body>
 </html>

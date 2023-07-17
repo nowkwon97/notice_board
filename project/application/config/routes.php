@@ -53,6 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Posts';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-//* URL 이 posts/view를 포함하고 뒤에 숫자가 나오면 Posts/view함수로 연결되어 변수로써 전달
-$route['posts/view/(:num)'] = 'Posts/view/$1';
-$route['posts/edit/(:num)'] = 'Posts/edit/$1';
+//* URL 이 view를 포함하고 뒤에 숫자가 나오면 View컨트롤러로 연결되어 변수로써 전달
+$route['view/(:num)'] = 'View/$1';
+// * URL 이 edit를 포함하고 뒤에 숫자가 나오면 Edit컨트롤러로 연결되어 변수로써 전달
+$route['edit/(:num)'] = 'Edit/$1';

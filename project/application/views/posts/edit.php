@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     print_r($data['posts'][0]['id']);
   ?>
   <?php echo validation_errors(); ?>
-	<?php echo form_open('posts/edit/' . $data['posts'][0]['id']) ?>
+	<?php echo form_open('edit/index/' . $data['posts'][0]['id']) ?>
     <div>
       <label for="title">제목</label>
       <input type="text" name="title" value="<?php echo $title ?>" required>
