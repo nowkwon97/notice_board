@@ -21,9 +21,10 @@
 
     public function index() {
       //* 회원 가입 기능 구현
-
+      
       $username = $this->input->post('username');
       $password = $this->input->post('password');
+      $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
       $this->form_validation->set_rules('username', '사용자명', 'required');
       $this->form_validation->set_rules('password', '비밀번호', 'required');
@@ -36,7 +37,7 @@
         // 폼 유효성 검사 성공 시
         $data = array(
           'username' => $username,
-          'password' => $password,
+          'password' => $hashedPassword,
         );
         $query = $this->SignUp_model->getWhere($username);
         if ($query->num_rows()>0) {

@@ -18,8 +18,6 @@
      * 세션을 제거하여 로그아웃 처리
      */
     public function index() {
-      $username = $this->input->post('username');
-      $password = $this->input->post('password');
 
       $this->form_validation->set_rules('username', '사용자명', 'required');
       $this->form_validation->set_rules('password', '비밀번호', 'required');
@@ -34,6 +32,8 @@
         echo "폼 유효성 검사 성공 시";
         // DB에서 정보 확인 후 일치 시 게시판으로
         // 불 일치 시 로그인으로 리디렉션
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
         $user = $this->Login_model->getUserByUsername($username);
 
         if ($user && password_verify($password, $user['password'])) {
