@@ -20,9 +20,11 @@
        * ? 3. 모델에서 createPost()호출하여 게시글 생성
        * ? 4. 생성 후 게시판으로 리디렉션
        */
+
       // 1. 폼 유효성 검사
       $this->form_validation->set_rules('title', '제목', 'required');
       $this->form_validation->set_rules('content', '내용', 'required');
+
       // 2. 폼 유효성 검사 결과에 따라 처리
       if ($this->form_validation->run()===FALSE) {
         // 2.1 유효성 검사 실패 시, 다시 작성 폼 표시
@@ -35,8 +37,10 @@
           'content' => $this->input->post('content'),
           'created_at' => date('Y-m-d H:i:s', time())
         );
+
         // 3. 모델에서 createPost()호출하여 게시글 생성
         $this->Create_model->createPost($data);
+        
         // 4. 생성 후 게시판으로 리디렉션
         redirect('posts');
       }
