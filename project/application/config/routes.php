@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 //! 디폴트 컨트롤러를 Posts로 변경해주어야 한다.
-$route['default_controller'] = 'SignUp';
+$route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 //* URL 이 view를 포함하고 뒤에 숫자가 나오면 View컨트롤러로 연결되어 변수로써 전달

@@ -24,8 +24,8 @@
 
       if ($this->form_validation->run()===FALSE) {
         // 폼 유효성 검사 실패 시
-        echo "폼 유효성 검사 실패 시";
-        //! 현재 유효성 검사 실패가 뜨고있음..
+        // echo "폼 유효성 검사 실패 시";
+        
         $this->load->view('userMgmt/login');
       } else {
         // 폼 유효성 검사 성공 시

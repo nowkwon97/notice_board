@@ -16,5 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <input type="password" name="password" placeholder="비밀번호" required>
     <button type="submit">로그인</button>
   </form>
+  <br>
+  <a href="signup">회원가입 하러 가기</a>
 </body>
 </html>
