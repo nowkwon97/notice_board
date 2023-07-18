@@ -75,7 +75,7 @@
         }
       } else {
         // $username의 id($user_id)가 id와 일치하지 않을 시
-        echo "<h3>username의 id와 user_id가 일치하지 않습니다.</h3>";
+        echo "<h3>권한이 없습니다.</h3>";
       }
     }
   }
