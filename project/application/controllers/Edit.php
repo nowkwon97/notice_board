@@ -19,7 +19,7 @@
        * ?  4.1 session의 username을 $username에 초기화
        * ?  4.2 브라우저의 url의 id와 비교하기 위한 user_id 초기화
        * ?  4.3 SELECT id from posts WHERE user_id = $user_id
-       * ?  4.4 쿼리문의 결과를 행의 id로 반환
+       * ?  4.4 getIdByUserId의 결과가 여러 개일 경우를 대비하여 result()로 받음
        * ? 5. 브라우저url의 id($id)와 username의 user_id비교
        * ?  5.1 $username의 id($user_id)가 id와 일치할 시
        * ?  5.2 폼 유효성 검사 결과에 따라 처리
@@ -48,11 +48,18 @@
       $user_id = $this->Edit_model->getUserIdByUsername($username);
       // 4.3 SELECT id from posts WHERE user_id = $user_id
       $query = $this->Edit_model->getIdByUserId($user_id);
-      // 4.4 쿼리문의 결과를 행의 id로 반환
-      $queryId = $query->row()->id;
-      echo $queryId;
+      // 4.4 getIdByUserId의 결과가 여러 개일 경우를 대비하여 result()로 받음
+      $queryId = $query->result();
+      // 쿼리 결과에 따른 값들을 반복하여 true로 설정해줌
+      $canEdit = false;
+      foreach ($queryId as $row) {
+        if ($row->id == $id) {
+          $canEdit = true;
+          break;
+        }
+      }
       // 5. 브라우저url의 id($id)와 username의 user_id 비교
-      if ($queryId === $id) {
+      if ($canEdit) {
         // 5.1 $username의 id($user_id)가 id와 일치할 시
 
         // 5.2 폼 유효성 검사 결과에 따라 처리
