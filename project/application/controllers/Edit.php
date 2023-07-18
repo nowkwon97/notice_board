@@ -50,7 +50,7 @@
       $query = $this->Edit_model->getIdByUserId($user_id);
       // 4.4 쿼리문의 결과를 행의 id로 반환
       $queryId = $query->row()->id;
-      
+      echo $queryId;
       // 5. 브라우저url의 id($id)와 username의 user_id 비교
       if ($queryId === $id) {
         // 5.1 $username의 id($user_id)가 id와 일치할 시

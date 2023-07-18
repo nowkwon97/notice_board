@@ -18,7 +18,7 @@
       $query = $this->Delete_model->getIdByUserId($user_id);
       $queryId = $query->row()->id;
       echo $queryId;
-      //! posts테이블의 user_id와 users테이블의 id가 일치할 시 로 바꿔야 함.
+      //! posts테이블의 user_id와 users테이블의 id가 일치할 시 로 바꾸기 or 현재 user_id에 해당하는 글이 여러 개 일 시 모든 글을 인식하는 로직으로 수정해야 한다.
       if($queryId===$id) {
         // $username의 id($user_id)가 id와 일치할 시
 

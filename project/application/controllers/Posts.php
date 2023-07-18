@@ -8,8 +8,11 @@
       $this->load->helper('url');
       $this->load->helper('date');
       $this->load->library('form_validation');
+      $this->load->library('session');
     }
     public function index() {
+      echo "<h3>현재 접속한 계정:</h3>";
+      echo $this->session->userdata('username');
       /**
        * todo 로그인 상태 확인하는 로직 필요
        * todo 로그인 실패 시 로그인 화면으로 리디렉션

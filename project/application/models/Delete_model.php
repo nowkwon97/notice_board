@@ -23,6 +23,7 @@
     }
 
     // posts 테이블에서 user_id가 $user_id인 id를 선택 하는 함수
+    //! 현재 단일 결과를 반환하여 여러 개의 반환이 있을 시 오류가 발생하고있다.
     public function getIdByUserId($user_id) {
       $query = $this->db->query("SELECT id FROM posts WHERE user_id = $user_id");
       return $query;
