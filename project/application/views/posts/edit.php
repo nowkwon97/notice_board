@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
   <h2>게시물 수정</h2>
   <?php
-    print_r($data['posts'][0]['id']);
+    // print_r($data['posts'][0]['id']);
   ?>
   <?php echo validation_errors(); ?>
 	<?php echo form_open('edit/index/' . $data['posts'][0]['id']) ?>
