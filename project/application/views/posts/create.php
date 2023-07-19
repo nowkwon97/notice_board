@@ -66,6 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   		    <input type="input" name="title" required>
   		  </div>
 				<div>
+          <!-- 스마트에디터로 변경할 부분 -->
 					<label for="content">내용</label>
 					<textarea name="content" rows="5"required></textarea>
 				</div>
