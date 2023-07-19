@@ -13,11 +13,6 @@
     public function index() {
       $username = $this->session->userdata('username');
       echo "<strong>현재 접속한 계정: </strong>" . $username;
-      /**
-       * todo 로그인 상태 확인하는 로직 필요
-       * todo 로그인 실패 시 로그인 화면으로 리디렉션
-       */
-
 
       //* 게시글 목록 조회 기능 구현
       /**
